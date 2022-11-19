@@ -2,7 +2,7 @@
 #include<array>
 #include<queue>
 using namespace std;
-//数据结构
+
 typedef struct BiTNode{
     char data;
     struct BiTNode *lchild;
@@ -23,7 +23,7 @@ void CreateBiTree(BiTree &T) {//二叉树的构造，用递归
         CreateBiTree(T->rchild);//构造右子树
     }
 }
- 
+
 //递归先序遍历
 void PreOrder(BiTree T){
     if(T){

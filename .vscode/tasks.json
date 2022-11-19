@@ -16,7 +16,7 @@
 
             "command": "g++",
 
-            "args": ["-g", "${file}", "-std=c++11", "-lpthread", "-o", "${fileBasenameNoExtension}.out"]
+            "args": ["-g", "${file}", "-std=c++11", "-lpthread", "-o", "${fileBasenameNoExtension}.out", "-I", "${workspaceFolder}/"]
 
         }
 

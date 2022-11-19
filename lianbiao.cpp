@@ -1,4 +1,4 @@
-#include <testalgo.h>
+#include <lianbiao.h>
 
 int main ()
 {
