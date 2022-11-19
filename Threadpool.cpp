@@ -10,13 +10,13 @@
 #include "Threadpool.h"
 #include <unistd.h>
 
-int testn =100;
+int testn =1000;
 
 void fun1(int slp)
 {
 	printf("  hello, fun1 !  %d\n", std::this_thread::get_id());
 	//std::this_thread::sleep_for(std::chrono::milliseconds(slp));    // ms
-	//std::this_thread::sleep_for(std::chrono::seconds(3));           // s
+	// std::this_thread::sleep_for(std::chrono::seconds(3));          // s
 }
  
 struct gfun {
@@ -39,6 +39,7 @@ class A {
 		}
 
 		static void Cfun () {
+			printf("1C\n");
 			while (testn>0) {
 				--testn;
 				cout<<testn<<endl;
@@ -48,6 +49,7 @@ class A {
 		}
 
 		static void Dfun () {
+			printf("2D\n");
 			while (testn>0) {
 				--testn;
 				cout<<testn<<endl;
@@ -57,7 +59,7 @@ class A {
 
 class B {
 public:
-	static void fun2(int q){
+	void fun2(int q){
 		cout<<"5555555555555555555"<<endl;
 	}
 };
@@ -80,9 +82,12 @@ int main()
 		//std::cout << fg.get() << " gfunsreturn " << fh.get().c_str() << " gfunsreturn2 " << std::this_thread::get_id() << std::endl;
  
 		// executor.commit(fun1, 55).get();    
-		int num = thread::hardware_concurrency();//获坖cpu核心�?�?  
+		int num = thread::hardware_concurrency();//获取cpu核心�?�?  
     	cout << "CPUs is:" << num << endl;
 		std::cout << "end... " << std::this_thread::get_id() << std::endl;
+
+		int numb = executor.idlCount();
+		cout << "NonThreads is:" << numb << endl;
 		 
 		while (1) {
         	sleep(10000);
