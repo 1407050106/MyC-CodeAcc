@@ -1,6 +1,11 @@
 #include <iostream>
-#include<array>
-#include<queue>
+#include <array>
+#include <queue>
+#include <numeric>
+#include <algorithm>
+#include <functional>
+#include <math.h>
+#include <ctime>
 using namespace std;
 
 int main()
@@ -21,9 +26,22 @@ int main()
 	// std::cin.get();
 
     //////////////////QUEUE//////////////////////////////////////
-    std::queue <int> w1;
-    w1.push(1);
-    std::cout << w1.front() << std::endl;
+    // std::queue <int> w1;
+    // w1.push(1);
+    // std::cout << w1.front() << std::endl;
 
-	//return 0;
+	time_t start = clock();
+
+	double a = 10;
+	double b = 10;
+	double d = log(b);
+	double c = pow(a,b);
+	int e = rand();
+	double f = sin(a);
+	cout<<M_PI<<endl;
+
+	time_t end = clock();
+
+	double consume = (end-start);
+	cout<<consume;
 }
