@@ -10,21 +10,32 @@ char c[]={};
 pair<string, int> b;
 int d;
 
+struct abc 
+{
+    int a;
+    bool d;
+    //int b;
+    //char b;
+    double c;
+};
+
 int main () 
 {
-    // int i = 12;
-    // string j = to_string(i);
-    // cout << j << endl;
-    // cout << typeid(i).name();
-    cout<<"Please Input a string:"<<endl;
-    cin>>a; //getline
-    //cout<<a<<endl;
-    strcpy(c, a.c_str());
-    cout<<c<<endl;
-    cout<<c[0]<<endl;
+    // // int i = 12;
+    // // string j = to_string(i);
+    // // cout << j << endl;
+    // // cout << typeid(i).name();
+    // cout<<"Please Input a string:"<<endl;
+    // cin>>a; //getline
+    // //cout<<a<<endl;
+    // strcpy(c, a.c_str());
+    // cout<<c<<endl;
+    // cout<<c[0]<<endl;
 
-    b.first=a;
-    b.second=d;
-    cout<<b.first<<endl;
+    // b.first=a;
+    // b.second=d;
+    // cout<<b.first<<endl;
+
+    cout<<sizeof(abc);
 
 }
