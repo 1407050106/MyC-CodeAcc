@@ -1,0 +1,3 @@
+/home/wangyonglin/VScode/HTTP/build/CMakeFiles/rebuild_cache.dir
+/home/wangyonglin/VScode/HTTP/build/CMakeFiles/edit_cache.dir
+/home/wangyonglin/VScode/HTTP/build/CMakeFiles/HTTP_DAQ.dir

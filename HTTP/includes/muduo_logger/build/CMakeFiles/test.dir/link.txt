@@ -1,0 +1,1 @@
+/home/wangyonglin/VScode/HTTP/gcc-linaro-arm-linux-gnueabihf-4.8-2014.04_linux/bin/arm-linux-gnueabihf-g++ -fPIC   -shared -Wl,-soname,libtest.so -o libtest.so CMakeFiles/test.dir/LogStream.cpp.o CMakeFiles/test.dir/Logger.cpp.o CMakeFiles/test.dir/TimeStamp.cpp.o CMakeFiles/test.dir/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o CMakeFiles/test.dir/test.cpp.o 
