@@ -1,4 +1,0 @@
-export PATH=$PATH:$HOME/64fanuc-cnc-for-dfstest/3rd_part_code/gcc-linaro-aarch64-linux-gnu-4.9-2014.07_linux/bin/
-export CC=aarch64-linux-gnu-gcc
-export CXX=aarch64-linux-gnu-g++
-./configure --prefix=$HOME/64fanuc-cnc-for-dfstest/3rd_part_code/ --host=x86_64 
