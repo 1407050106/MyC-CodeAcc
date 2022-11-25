@@ -1,0 +1,89 @@
+# Created by WangYonglin 2022
+# rttys([中文](/README_ZH.md))
+# Usage
+## download the pre-built release binary from [Release](https://github.com/zhaojh329/rttys/releases) page according to your os and arch or compile it by yourself.
+
+    git clone https://github.com/zhaojh329/rttys
+
+    cd ui
+    npm install
+    npm run build
+    cd ..
+
+    ./build.sh linux amd64
+
+1、先配置安装原文件
+## Running as a Linux service
+Move the rttys binary into /usr/local/bin/
+
+    sudo mv rttys /usr/local/bin/
+
+Copy the config file to /etc/rttys/
+
+    sudo mkdir /etc/rttys
+    sudo cp rttys.conf /etc/rttys/
+
+Create a systemd unit file: /etc/systemd/system/rttys.service
+
+    [Unit]
+    Description=rttys
+    After=network.target
+
+    [Service]
+    ExecStart=/usr/local/bin/rttys run -c /etc/rttys/rttys.conf
+    TimeoutStopSec=5s
+
+    [Install]
+    WantedBy=multi-user.target
+
+2、安装数据库MySQL并配置
+# Database Preparation
+
+On database instance, login to database console as root:
+```
+mysql -u root -p
+```
+
+Create database user which will be used by Rttys, authenticated by password. This example uses 'rttys' as password. Please use a secure password for your instance.
+```
+CREATE USER 'rttys' IDENTIFIED BY 'rttys';
+```
+
+Create database with UTF-8 charset and collation. Make sure to use utf8mb4 charset instead of utf8 as the former supports all Unicode characters (including emojis) beyond Basic Multilingual Plane. Also, collation chosen depending on your expected content. When in doubt, use either unicode_ci or general_ci.
+```
+CREATE DATABASE rttys CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_unicode_ci';
+```
+
+Grant all privileges on the database to database user created above.
+```
+GRANT ALL PRIVILEGES ON rttys.* TO 'rttys';
+FLUSH PRIVILEGES;
+```
+
+Quit from database console by exit.
+
+3、token
+## Authorization
+### Token
+Generate a token
+
+    $ rttys token
+    Please set a password:******
+    Your token is: 34762d07637276694b938d23f10d7164
+
+Use token
+
+    $ rttys run -t 34762d07637276694b938d23f10d7164
+
+4、运行
+To start the service for the first time, do the usual systemctl dance:
+
+    sudo systemctl daemon-reload
+    sudo systemctl enable rttys
+    sudo systemctl start rttys
+
+You can stop the service with:
+
+    sudo systemctl stop rttys
+
+终端运行rttys &即可！
