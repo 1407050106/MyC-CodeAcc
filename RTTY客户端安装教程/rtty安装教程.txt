@@ -1,0 +1,10 @@
+安装rtty
+1、把文件夹（rtty）拷贝至root目录下
+2、在终端运行命令：sudo apt install -y libev-dev libssl-dev
+3、进入到刚刚粘贴的rtty文件目录下，依次执行如下2条命令： 
+	mkdir build && cd build
+	cmake .. && make install
+4、之后就可以使用rtty命令进行客户端的创建了，格式如下（黄盒子里一般是写在ps_check文件里了）：
+	rtty -I FB-A002-C8BFA90 -h nsecuw.bj-fanuc.com.cn -p 5912 -a -v -d 'ZhongTai' &
+	注：在命令里只需更改2处，盒子的ID和备注，比如上面的FB-A002-C8BFA90和'ZhongTai'
+5、刷完在服务端检查到盒子上线，就证明成功了。
