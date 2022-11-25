@@ -1,7 +1,3 @@
-//
-// Created by fanuc on 2020/11/2.
-//
-
 #include <iostream>
 #include <sys/types.h>
 #include <sys/ipc.h>
