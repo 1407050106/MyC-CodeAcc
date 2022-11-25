@@ -1,0 +1,3 @@
+/home/wangyonglin/VScode/chuankou/build/CMakeFiles/rebuild_cache.dir
+/home/wangyonglin/VScode/chuankou/build/CMakeFiles/edit_cache.dir
+/home/wangyonglin/VScode/chuankou/build/CMakeFiles/MODBUS_DAQ.dir
