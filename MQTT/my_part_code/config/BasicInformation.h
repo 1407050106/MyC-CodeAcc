@@ -1,7 +1,3 @@
-//
-// Created by bfm on 7/5/20.
-//
-
 #ifndef BFM_TCPCLIENT_BASICINFORMATION_H
 #define BFM_TCPCLIENT_BASICINFORMATION_H
 
