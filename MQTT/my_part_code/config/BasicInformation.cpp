@@ -1,7 +1,3 @@
-//
-// Created by fanuc on 2021/2/19.
-//
-
 #include <string>
 #include <cstring>
 #include "Logger.h"
