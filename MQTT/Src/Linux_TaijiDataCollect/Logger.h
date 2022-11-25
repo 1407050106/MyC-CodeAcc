@@ -1,7 +1,3 @@
-//
-// Created by longyaowei on 7/21/20.
-//
-
 #ifndef ECU_LINUXTRANS_LOGGER_H
 #define ECU_LINUXTRANS_LOGGER_H
 
