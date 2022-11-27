@@ -77,7 +77,6 @@ int main() {
     shuzu.push_back(3);
     shuzu.push_back(6);
     shuzu.push_back(2);
-
     
     // if (maopao(shuzu)) {
     //     for_each(shuzu.begin(), shuzu.end(), myway());
