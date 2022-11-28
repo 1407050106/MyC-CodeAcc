@@ -17,11 +17,12 @@ int main()
     // //cout<<"wyl"<<endl;
     // Print32(num);
 
-    int a=44;
-    Print32(a);
-    cout<<endl;
-    Print32(~a);
-    cout<<endl;
-    cout<<~a+1<<endl;
+    //xiagfanshu
+    // int a=44;
+    // Print32(a);
+    // cout<<endl;
+    // Print32(~a);
+    // cout<<endl;
+    // cout<<~a+1<<endl;     
 
 }

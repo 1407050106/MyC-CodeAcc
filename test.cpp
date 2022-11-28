@@ -20,7 +20,6 @@ public:
 };
 int main()
 {
-
 	shared_ptr<Rectangle> P1(new Rectangle(10, 5));
 	cout << P1->area() << endl;
 	shared_ptr<Rectangle> P2;
