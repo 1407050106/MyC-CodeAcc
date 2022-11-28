@@ -60,7 +60,7 @@ struct myway{
         }
 };
 
-//int b = (rand() % 100)*0.1;   //0-1
+//int b = (rand() % 100)*0.1;   //0-10
 class SrandNumber{              //duishuqi
     public:
         vector<int> producenum () 
