@@ -52,32 +52,6 @@ int main(){
     //     cout<<a[j];
     // }
 
-    // test bag question
-    vector<int> v={1, 2, 5, 7};   //6*1 2*3 1+1+2*2 1*4+2 1+5 
-    int target = 6;
-    int num = v.size();
-    int count=0;
-    int temp=0;
 
-    for (int i=0; i<num; i++)
-    {
-        if (target/v[i]>0 && target%v[i]==0)
-        {
-            count++;
-            count++;
-        }
-    }
-
-    for (int i=0; i<num-1; i++)
-    {
-        for (int j=i+1; j<num; j++)
-        {
-            temp = target-v[i]-v[j];
-            jishu(temp, v[i], v[j], count);
-            
-        }
-    }
-
-    cout<<count;
     
 }
