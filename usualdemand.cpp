@@ -2,6 +2,7 @@
 #include <typeinfo>
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <vector>
 using namespace std;
 
@@ -18,6 +19,61 @@ struct abc
     //char b;
     double c;
 };
+
+typedef struct TreeNode{
+    int val;
+    struct TreeNode* left;
+    struct TreeNode* right;
+}TreeNode;
+
+void QPrintTree(TreeNode* head)
+{
+    if (head)
+    {
+        cout<<head->val;
+        QPrintTree(head->left);
+        QPrintTree(head->right);
+    }
+}
+
+void ZPrintTree(TreeNode* head)
+{
+    if (head)
+    {
+        ZPrintTree(head->left);
+        cout<<head->val;
+        ZPrintTree(head->right);
+    }
+}
+
+void HPrintTree(TreeNode* head)
+{
+    if (head==nullptr)
+    {
+        return;
+    }
+    HPrintTree(head->left);
+    HPrintTree(head->right);
+    cout<<head->val;
+}
+
+TreeNode* CreateTreebycin(TreeNode* head)
+{
+    int a;
+    cout<<"Please set a node:";
+    cin>>a;
+    if (a==0)
+    {
+        return nullptr;
+    }
+    head = new TreeNode;
+    head->val=a;
+    cout<<"You have set a node: "<<a<<endl;
+    head->left = CreateTreebycin(head->left);
+    head->right = CreateTreebycin(head->right);
+    return head;
+}
+
 
 int main () 
 {
@@ -36,6 +92,15 @@ int main ()
     // b.second=d;
     // cout<<b.first<<endl;
 
-    cout<<sizeof(abc);
+    //neicun duiqi
+    //cout<<sizeof(abc);
 
+    //shoudong shuru er cha shu
+    TreeNode *top, *res;
+    res=CreateTreebycin(top);
+    QPrintTree(res);
+    printf("\n");
+    ZPrintTree(res);
+    printf("\n");
+    HPrintTree(res);
 }
