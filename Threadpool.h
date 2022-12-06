@@ -99,13 +99,13 @@ class threadpool
 							_task_cv.wait(lock, [this] {
 								return !_run || !_tasks.empty();
 								}); // wait until there is a task in queue
-							if (!_run && _tasks.empty())
+							if (!_run && _tasks.empty())   //fangzhi xujia huanxing
 								return;
 							task = move(_tasks.front()); // strach a task from queue
 							_tasks.pop();
 						}
 						_idlThrNum--;
-						task(); //执行任务
+						task(); //执�?�任�?
 						_idlThrNum++;
 					}
 					});
