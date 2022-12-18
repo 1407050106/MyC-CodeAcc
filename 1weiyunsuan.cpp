@@ -17,7 +17,7 @@ int main()
     // //cout<<"wyl"<<endl;
     // Print32(num);
 
-    //xiagfanshu
+    //xiang fan shu
     // int a=44;
     // Print32(a);
     // cout<<endl;

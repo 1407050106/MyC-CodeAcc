@@ -1,6 +1,6 @@
 #include <iostream>
-using namespace std;
 #include <memory>
+using namespace std;
 
 class Rectangle {
 	int length;

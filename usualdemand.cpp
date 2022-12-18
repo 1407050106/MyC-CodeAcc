@@ -40,9 +40,9 @@ void ZPrintTree(TreeNode* head)
 {
     if (head)
     {
-        ZPrintTree(head->left);
+        if(head->left) ZPrintTree(head->left);
         cout<<head->val;
-        ZPrintTree(head->right);
+        if(head->right) ZPrintTree(head->right);
     }
 }
 
@@ -55,6 +55,17 @@ void HPrintTree(TreeNode* head)
     HPrintTree(head->left);
     HPrintTree(head->right);
     cout<<head->val;
+}
+
+int FindDepth(TreeNode* T)
+{
+    if(!T)
+    {
+        return 0;
+    }
+    int m = FindDepth(T->left)+1;
+    int n = FindDepth(T->right)+1;
+    return m>n?m:n;
 }
 
 TreeNode* CreateTreebycin(TreeNode* head)
@@ -103,4 +114,6 @@ int main ()
     ZPrintTree(res);
     printf("\n");
     HPrintTree(res);
+    printf("\n");
+    cout<<FindDepth(res)<<endl;
 }

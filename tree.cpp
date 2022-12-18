@@ -70,12 +70,12 @@ int Depth(BiTree T){
     if(T == NULL)
         return 0;
     else{
-        int m = Depth(T->lchild);
-        int n = Depth(T->rchild);
+        int m = Depth(T->lchild)+1;
+        int n = Depth(T->rchild)+1;
         if(m>n)
-            return (m+1);
+            return (m);
         else
-            return (n+1);
+            return (n);
     }
 }
  
