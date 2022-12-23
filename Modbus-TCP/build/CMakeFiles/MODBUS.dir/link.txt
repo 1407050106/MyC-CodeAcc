@@ -1,0 +1,1 @@
+/opt/gcc-linaro-arm-linux-gnueabihf-4.8-2014.04_linux/bin/arm-linux-gnueabihf-g++     CMakeFiles/MODBUS.dir/3rd_module/include/wmodbus.cpp.o CMakeFiles/MODBUS.dir/tcp.cpp.o  -o MODBUS   -L/home/wyl/Modbus-TCP/3rd_module/lib  -Wl,-rpath,/home/wyl/Modbus-TCP/3rd_module/lib -lmodbus 

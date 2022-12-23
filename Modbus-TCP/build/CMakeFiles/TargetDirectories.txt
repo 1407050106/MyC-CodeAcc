@@ -1,0 +1,3 @@
+/home/wyl/Modbus-TCP/build/CMakeFiles/rebuild_cache.dir
+/home/wyl/Modbus-TCP/build/CMakeFiles/edit_cache.dir
+/home/wyl/Modbus-TCP/build/CMakeFiles/MODBUS.dir
