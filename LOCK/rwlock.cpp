@@ -13,7 +13,6 @@ bool cap = false;
 mutex lk;
 condition_variable cv;
 
-
 bool WriteSome()
 {
     unique_lock<mutex> lock(lk);

@@ -26,7 +26,6 @@ class Young{
         }
 
         //virtual int bei()=0;
-
     private:
         int c;
 };
@@ -52,14 +51,14 @@ struct myway{
 };
 
 int main() {
-    Young young(8888);
-    wyl test;
-    test.bei();
+    // Young young(8888);
+    // wyl test;
+    // test.bei();
     vector<int> v{7,1,2,3,4,5,6};
     //sort(v.begin(), v.end());
     //sort(v.begin(), v.end(), compare);
     //sort(v.begin(), v.end(), less<int>());
-    sort(v.begin(), v.end(), test.compare);
+    sort(v.begin(), v.end(), compare);
     for_each(v.begin(), v.end(), myway());
     printf("\n");
 }
