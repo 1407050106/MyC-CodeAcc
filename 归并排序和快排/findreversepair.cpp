@@ -45,7 +45,7 @@ int merge(int arr[], int L, int M, int R)
     while (p2<=R) help[i++]=arr[p2++];
     for (int k=0; k<R-L+1; k++)
     {
-        arr[L+k]=help[k];
+        arr[L+k]=help[k];   
     }
     return ans;
 }

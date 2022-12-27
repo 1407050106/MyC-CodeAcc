@@ -67,9 +67,9 @@ void MergeSort2(int arr[], int len)
         while(L<N)
         {
             int M = L+stepsize-1;
-            if (M>=N) break;
+            if (M>=N) break;        //确保每个下标都不越界即可
             int R = min(M+stepsize, N-1);
-            merge(arr, L, M, R);
+            merge(arr, L, M, R);    //merge相当于自己写的一个工具,合并算法围绕该函数的参数去写就没那么复杂了
             L=R+1;
         }
         // 防止溢出
