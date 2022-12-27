@@ -14,7 +14,7 @@ void CreateBiTree(BiTree &T) {//二叉树的构造，用递归
     char ch;
     cin >> ch;
     //当前结点为空
-    if (ch == '#') T = NULL;
+    if (ch == '0') T = NULL;
     else {
         //当前结点不空
         T = new BiTNode;
@@ -35,11 +35,11 @@ void PreOrder(BiTree T){
  
 //中序遍历
 void InOrder(BiTree T){
-    if(T){
-        InOrder(T->lchild);
-        cout<<T->data<<" ";
-        InOrder(T->rchild);
-    }
+    if (!T) return;
+
+    InOrder(T->lchild);
+    cout<<T->data<<" ";
+    InOrder(T->rchild);
 }
  
 //后序遍历
@@ -48,6 +48,8 @@ void SubOrder(BiTree T){
         SubOrder(T->lchild);
         SubOrder(T->rchild);
         cout<<T->data<<" ";
+    } else {
+        return;
     }
 }
  
