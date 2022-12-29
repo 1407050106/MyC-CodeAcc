@@ -6,6 +6,8 @@ class Heaps{
     public:
 
     private:
+
+        // 这代表加数调整堆结构的过程1
         // 往堆中加数并调整堆结构
         // 新加进来的数，现在停在了index位置，请依次往上移动，
 		// 移动到0位置，或者干不掉自己的父亲了，停！
@@ -18,6 +20,7 @@ class Heaps{
             }
         }
 
+        // 这代表删数调整堆结构的过程2
         // 从堆中删除最大值，即头节点
         // 从index位置，往下看，不断地下沉
 		// 停：较大的孩子都不再比index位置的数大；或者已经没孩子了
@@ -47,12 +50,39 @@ class Heaps{
             arr[p]=arr[p]^arr[q];
         }
 };
-  
+
+template <typename T>
+class cmp
+{
+public:
+    //重载 () 运算符
+    bool operator()(T a, T b)
+    {
+        return a > b;   // zheli is jiangxu 
+    }
+};
+
 int main() {
     // C++优先队列priority_queue默认为大顶堆
     // priority_queue<int> v;
     // v.push(5);
     // v.push(2);
     // v.push(1);
-    // if (!v.empty()) cout<<v.top();
+    // while (!v.empty()) 
+    // {
+    //     cout<<v.top()<<endl;;
+    //     v.pop();
+    // }
+
+    // C++优先级队列修改成小根堆，自定义排序
+    // priority_queue<int, vector<int>, greater<int>> w;
+    // priority_queue<int, vector<int>, cmp<int>> w;
+    // w.push(5);
+    // w.push(2);
+    // w.push(1);
+    // while (!w.empty()) 
+    // {
+    //     cout<<w.top()<<endl;;
+    //     w.pop();
+    // }
 }

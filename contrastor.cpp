@@ -14,7 +14,7 @@ class Young{
             cout<<"c=input!"<<endl;
         }
 
-        static bool compare(int a, int b)
+        static bool compare(int a, int b)     //static!
         {
             return a>b;
         }
