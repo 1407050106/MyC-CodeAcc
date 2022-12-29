@@ -2,10 +2,39 @@
 #include <queue>
 using namespace std;
 
+// this class is a big-root heap
 class Heaps{
     public:
+        Heaps(int nums):limit(nums)
+        {
+            arr = new int[limit];
+            heapsize=0;
+        }
 
+        void push(int para)
+        {
+            if (heapsize==limit) throw runtime_error("The Heap is full!");
+            arr[heapsize]=para;
+            HeapInsert(arr, heapsize++);
+        }
+
+        int pop()
+        {
+            if (heapsize==0) throw runtime_error("The heap is null!");
+            int ans = arr[0];
+            swap(arr, 0, heapsize-1);
+            Heapify(arr, 0, --heapsize);
+            return ans;
+        }
+
+        void printheap() {
+            if (heapsize==0) throw runtime_error("The heap is null!");
+            for (int k=0; k<heapsize; k++) cout<<arr[k];
+        }
     private:
+        int limit;
+        int *arr;
+        int heapsize;
 
         // 这代表加数调整堆结构的过程1
         // 往堆中加数并调整堆结构
@@ -48,7 +77,7 @@ class Heaps{
             arr[p]=arr[p]^arr[q];
             arr[q]=arr[p]^arr[q];
             arr[p]=arr[p]^arr[q];
-        }
+        }       
 };
 
 template <typename T>
@@ -85,4 +114,14 @@ int main() {
     //     cout<<w.top()<<endl;;
     //     w.pop();
     // }
+
+    Heaps heaps(10);
+    heaps.push(1);
+    heaps.push(2);
+    heaps.push(3);
+    heaps.push(4);
+    heaps.printheap();
+    printf("\n");
+    heaps.pop();
+    heaps.printheap();
 }
