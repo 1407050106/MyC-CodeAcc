@@ -57,11 +57,52 @@ class Trie1{
             node->end++;
         }
 
-        void delete(string word)
-        {
+        // 相比其它方法，麻烦一些, 注意防止内存泄漏
+        // void delet(string word)
+        // {
+        //     if (search(word)!=0)
+        //     {
+        //         Node1* node = root;
+        //         node->pass--;   // 头节点处的p先--
+        //         int path = 0;
+        //         for (char a : word)    // 然后去找路
+        //         {
+        //             path = a-'a';
+        //             if (--node->nexts[path]->pass==0)  // 这里这样想：当前这条路的p--后是否等于0
+        //             {
+        //                 node->nexts[path]=NULL;
+        //                 return;
+        //             }              
+        //             node=node->nexts[path];
+        //         }
+        //         node->end--;
+        //     }
+        // }
 
+        void delet(string word)
+        {
+            if (search(word)!=0)
+            {
+                Node1* node = root;
+                node->pass--;   // 头节点处的p先--;
+                int path = 0;
+                for (char a : word)    // 然后去找路
+                {
+                    path = a-'a';
+                    if (--node->nexts[path]->pass==0)  // 这里这样想：当前这条路的p--后是否等于0
+                    {
+                        //node->nexts[path]=nullptr;
+                        delete node->nexts[path];    // Pay attention!
+                        node->nexts[path]=nullptr;
+                        return;
+                    }              
+                    node=node->nexts[path];
+                }
+                node->end--;
+            }
         }
 
+        // word这个单词之前加入过几次
         int search(string word)
         {
             if (word=="") return 0;
@@ -78,11 +119,42 @@ class Trie1{
             }
             return node->end;
         }
+
+        // 所有加入的字符串中，有几个是以pre这个字符串作为前缀的
+        int prefixNumber(string pre)
+        {
+            if (pre=="") return 0;
+            Node1* node = root;
+            for (char a : pre)
+            {
+                int temp = a-'a';
+                if (node->nexts[temp]==NULL) return 0;
+                node = node->nexts[temp];
+            }
+            return node->pass;
+        }
     private:
         Node1* root;
 };
 
 int main() {
-    Node1 node1;
+    //int index = (int)'b';   // 获取字符的ASC码值
+    Trie1 trie;
+    trie.insert("abc");
+    cout<<trie.search("abc")<<endl;
+    cout<<trie.search("absk")<<endl;
+    cout<<trie.prefixNumber("ab")<<endl;
+    trie.insert("absk");
+    cout<<trie.search("abc")<<endl;
+    cout<<trie.search("absk")<<endl;
+    cout<<trie.prefixNumber("ab")<<endl;
+    trie.delet("absk");
+    cout<<trie.search("abc")<<endl;
+    cout<<trie.search("absk")<<endl;
+    cout<<trie.prefixNumber("ab")<<endl;
+    trie.delet("abc");
+    cout<<trie.search("abc")<<endl;
+    cout<<trie.search("absk")<<endl;
+    cout<<trie.prefixNumber("ab")<<endl;
     return 0;
 }
