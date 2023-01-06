@@ -92,8 +92,10 @@ class Trie1{
                     if (--node->nexts[path]->pass==0)  // 这里这样想：当前这条路的p--后是否等于0
                     {
                         //node->nexts[path]=nullptr;
+                        // 如果要删除的话，只能在这一步利用两个指针依次释放剩下不要的节点内存
                         delete node->nexts[path];    // Pay attention!
-                        node->nexts[path]=nullptr;
+                        // 然后node节点设空断链
+                        node->nexts[path]=nullptr;   
                         return;
                     }              
                     node=node->nexts[path];
