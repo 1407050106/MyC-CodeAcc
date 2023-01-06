@@ -78,7 +78,8 @@
     "set": "cpp",
     "netfwd": "cpp",
     "shared_mutex": "cpp",
-    "variant": "cpp"
+    "variant": "cpp",
+    "climits": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "/usr/bin/gcc",
   "C_Cpp_Runner.cppCompilerPath": "/usr/bin/g++",
