@@ -3,6 +3,9 @@
 using namespace std;
 
 int main() {
-    //int a = LONG_MIN;
+    // long a = LONG_MIN;
+    // cout<<a<<endl;
 
+    // for new trie and delete correctly
+    
 }
