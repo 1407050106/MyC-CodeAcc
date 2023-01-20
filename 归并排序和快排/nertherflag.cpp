@@ -77,9 +77,11 @@ wyl netherlandsFlag(int arr[], int L, int R)
         } else if (arr[index]<arr[R]) {
             swap(arr, index++, ++less);  //no need to see the left, so skip
         } else {
+            // 这里的index不用++！！！
             swap(arr, index, --more);
         }
     }
+    // 注意交换的下标始用！
     swap(arr, more, R);
     // int res[]={less+1, more};
     // cout<<"space is = "<<res[0]<<res[1]<<endl;
@@ -89,6 +91,7 @@ wyl netherlandsFlag(int arr[], int L, int R)
     //{
     //	cout<<*(b+i)<<endl;
     //}
+    // 返回相等的那个区间边界，荷兰国旗会告诉你等于区域是哪个范围
     pair<int, int> ans(less+1, more);
     return ans;
 }
