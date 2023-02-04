@@ -81,7 +81,7 @@ class BTree{
             if (cur)
             {
                 stack<TreeNode*> temp;
-                while(!temp.empty() || cur!=nullptr)
+                while(!temp.empty() || cur!=nullptr)  // 两个条件互相制约，只要栈不为空或者还有节点，就继续压栈
                 {
                     if (cur!=nullptr)
                     {

@@ -45,8 +45,8 @@ int partition(int arr[], int L, int R)
             arr[index]=temp;
             index++;
         }
+        index++;
     }
-    index++;
     swap(arr, index, R);    // pay attention!
     return index;
 }
