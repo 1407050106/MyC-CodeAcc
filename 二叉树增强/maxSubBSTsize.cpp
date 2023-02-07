@@ -109,7 +109,7 @@ class ConstructTree{
                     // 这里还是要判断一下：左右子树是否存在？存在才能取值
                     int leftsize = leftinfo==nullptr?0:leftinfo->allSize;
                     int rightsize = rightinfo==nullptr?0:rightinfo->allSize;
-                    p3 = leftsize + rightsize +1;
+                    p3 = leftsize + rightsize + 1;
                 }
             }
             int maxSubSize = max(max(p1,p2), p3);
