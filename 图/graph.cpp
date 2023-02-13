@@ -66,5 +66,5 @@ class GraphGenerator {
 
 int main() 
 {
-
+    
 }
