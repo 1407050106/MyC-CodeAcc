@@ -25,11 +25,9 @@ public:
     int process1(int i, vector<int> record, int n, vector<string>& ans) {  // 你就假设你现在来到了i行
 		if (i == n) {
             res.push_back(ans);
-            ans.clear();
             return 1;
 		}
 		int resm=0;
-        ans.clear();
 		for (int j = 0; j < n; j++) {
 			// 如果跟之前的皇后不打架，就记录一下，然后继续统计去吧。如果打架，换一列！
 			if (isValid(record, i, j)) {
@@ -38,9 +36,9 @@ public:
                 // cout<<temp<<endl;
                 ans.push_back(temp);
 				resm+=process1(i + 1, record, n, ans);
+                ans.pop_back();
 			}
 		}
-        //ans.clear();
         return resm;
 	}
 
@@ -49,12 +47,12 @@ public:
         string res="";
         for (int i=0; i<n; i++)
         {
-            if (i=j)
+            if (i==j)
             {
-                res.push_back('Q');
+                res+="Q";
                 continue;
             }
-            res.push_back('.');
+            res+=".";
         }
         return res;
     }
@@ -97,16 +95,16 @@ public:
 int main() {
     vector<vector<string>> res;
     Solution sc;
-    // res=sc.solveNQueens(4);
-    // int m=res.size(), n=res[0].size();
-    // for (int i=0; i<m; i++)
-    // {
-    //     for (int j=0; j<n; j++)
-    //     {
-    //         cout<<res[i][j]<<" ";
-    //     }
-    //     printf("\n");
-    // }
-    cout<<sc.recordQ(3,1)<<endl;
+    res=sc.solveNQueens(5);
+    int m=res.size(), n=res[0].size();
+    for (int i=0; i<m; i++)
+    {
+        for (int j=0; j<n; j++)
+        {
+            cout<<res[i][j]<<" ";
+        }
+        printf("\n");
+    }
+
     //cout<<sc.getnums(3)<<endl;   // no problem
 }
