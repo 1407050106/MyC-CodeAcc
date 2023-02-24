@@ -11,7 +11,7 @@ int Rangdom(int range)
     return (rand()%range+1)-(rand()%range+1);   //[1-range]
 }
 
-//duidhuqi2
+//duidhuqi
 vector<int> generator(int maxkind, int range, int kk, int mm)   //set shuzu (how to kepp 1<=kk<mm?)
 {
     vector<int> arry;
@@ -48,7 +48,7 @@ vector<int> generator(int maxkind, int range, int kk, int mm)   //set shuzu (how
     return arry;
 }
 
-//duishuqi1
+
 int hashmethod(vector<int> v, int k)
 {
     map<int, int> hashmap;
@@ -87,8 +87,9 @@ int findanswer(vector<int> v, int m)
     {
         for (int j=0; j<32; j++)
         {
-            //gooder
-            acc[j] += (i>>j)&1;
+            // gooder
+            // 右移1位与上1，就是要依次获取低位的二进制值
+            acc[j] += (i>>j)&1; 
             // if((i>>j)&1 == 1)
             // {
             //     cout<<i<<j<<endl;
