@@ -5,6 +5,8 @@
 #include <functional>
 using namespace std;
 
+// 完全可以啦 不用再看卡啦
+
 #define Maxsize 50
 #define Maxnumber 100
 
@@ -60,7 +62,7 @@ struct myway{
         }
 };
 
-//int b = (rand() % 100)*0.1;   //0-10
+//int b = (rand() % 100)*0.1;   //0-9
 class SrandNumber{              //duishuqi
     public:
         vector<int> producenum () 

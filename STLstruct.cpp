@@ -44,9 +44,9 @@ int main()
 	// cin.get(a);   //only for char, and only get 1 char, but also for char[]
 	// cout<<a<<endl;
 
-	// char b[5];
-	// cin.getline(b, 6);   //for char[], but get5, because last is '/0'
-	// cout<<b<<endl;
+	char b[5];
+	cin.getline(b, 3);   //for char[], but read5, because last is '/0'
+	cout<<b<<endl;
 
 	// int a;
 	// string b;
@@ -55,7 +55,7 @@ int main()
 	// cout<<a<<b<<c<<endl;
 
 	//////////////////ARRAY//////////////////////////////////////
-	// array <array <int, 4>, 5> arr = {};    //5hang4lie
+	// array <array <int, 4>, 5> arr = {};    //5hang4lie  // 这种初始化方法好～
 	// arr.fill({2,2});     //dui lie chushihua
 	// arr[0].fill({1});    //dui hang chushihua
 	// std::cout << arr.size() << std::endl;            //hang
@@ -116,20 +116,20 @@ int main()
 
 
 	//////////////////MAP//////////////////////////////////////
-	unordered_map<string, int> hashmap;
-	
-	hashmap["abc"]=8;
-	hashmap["abc"]=1;
-	hashmap["nba"]=2;
-	hashmap["wyl"]=5;
-	hashmap["cba"]=6;
+	// 	unordered_map<string, int> hashmap;
+		
+	// 	hashmap["abc"]=8;
+	// 	hashmap["abc"]=1;
+	// 	hashmap["nba"]=2;
+	// 	hashmap["wyl"]=5;
+	// 	hashmap["cba"]=6;
 
-	auto it = hashmap.find("abc");           //meiyou chongfu!
-	cout<<it->first<<" "<<it->second<<endl;
+	// 	auto it = hashmap.find("abc");           //meiyou chongfu!
+	// 	cout<<it->first<<" "<<it->second<<endl;
 
-	hashmap.erase("abc");                //删除的参数是迭代器或者键值
-	for(unordered_map<string, int>::iterator is=hashmap.begin(); is!=hashmap.end(); is++)
-	{
-		cout<<is->first<<" "<<is->second<<endl;
-	}
+	// 	hashmap.erase("abc");                //删除的参数是迭代器或者键值
+	// 	for(unordered_map<string, int>::iterator is=hashmap.begin(); is!=hashmap.end(); is++)
+	// 	{
+	// 		cout<<is->first<<" "<<is->second<<endl;
+	// 	}
 }

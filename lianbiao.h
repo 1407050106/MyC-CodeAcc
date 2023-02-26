@@ -17,7 +17,7 @@ Node* create(int leng)
         Node* p = new Node;
         p->val = i+1;
         pre->next = p;
-        pre = p;               //pre node becomes now node, move forward
+        pre = p;        //pre node becomes now node, move forward
 
         p->next=NULL;
         
@@ -27,13 +27,13 @@ Node* create(int leng)
 
 void display(Node* head)
 {
-    Node* bac = head;
+    Node* bac = head->next;
 
 	do
 	{
 		cout << bac->val << endl;
 		bac = bac->next;
-	} while (bac->next);
+	} while (bac);
 
 	cout << "Over~\n" << endl;
 

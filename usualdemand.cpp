@@ -1,7 +1,7 @@
 #include <iostream>
 #include <typeinfo>
 #include <string.h>
-#include <stdio.h>
+//#include <stdio.h>
 #include <stdlib.h>
 #include <vector>
 using namespace std;
@@ -103,8 +103,8 @@ int main ()
     // b.second=d;
     // cout<<b.first<<endl;
 
-    //neicun duiqi
-    //cout<<sizeof(abc);
+    // neicun duiqi
+    cout<<sizeof(abc);
 
     //shoudong shuru er cha shu
     TreeNode *top, *res;

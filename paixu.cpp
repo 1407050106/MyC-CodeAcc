@@ -4,7 +4,8 @@
 #include <algorithm>
 using namespace std;
 
-//xuanze paixu
+// xuanze paixu
+// 选择排序的两个步骤就是：依次选择最小的值+交换!
 void xuanze (vector<int>& v)
 {
     int num = v.size();
@@ -37,7 +38,8 @@ void swap2(vector<int>& v, int j, int MinIndex)
     v[j]=temp;
 }
 
-//maopao paixu
+// maopao paixu
+//  冒泡排序一共要进行N-1轮，每轮都从0开始!
 bool maopao (vector<int>& v)
     {
         int scape = v.size();

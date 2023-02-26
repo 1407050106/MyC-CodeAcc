@@ -3,13 +3,14 @@ using namespace std;
 
 int main() {
     //SERVER
+    // 1.创建句柄   
     int listenfd;
     listenfd=socket(AF_INET,SOCK_STREAM,0);
     if(listenfd==-1)
     {
         printf("Socket create fail!\n");
     }
-
+    // 2.绑定端口
     struct sockaddr_in serveraddr;
     memset(&serveraddr,0,sizeof(serveraddr));
     serveraddr.sin_family=AF_INET;
@@ -25,7 +26,7 @@ int main() {
         printf("Listen failed\n");
         close(listenfd);
     }
-
+    // 3.用接收函数去监听
     int clintfd;
     int socklen=sizeof(struct sockaddr_in);
     struct sockaddr_in client_addr;
@@ -44,7 +45,7 @@ int main() {
         perror("send");
     }
     printf("receive %s\n",buf);
-
+    // 4.有客户端连接就可以通信了
     char buffer[1024];
     while (1)
     {

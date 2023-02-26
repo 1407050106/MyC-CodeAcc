@@ -37,6 +37,11 @@ class Rectan: public Line
             ptr = new int;
         }
 
+        void ccout()
+        {
+            cout<<"Rectan is doing!"<<endl;
+        }
+
         ~Rectan()
         {
             cout<<"Rectan is end!"<<endl;
@@ -48,9 +53,9 @@ class Rectan: public Line
 };
 
 int main() {
-    // Line line(6);
-    // cout<<"geta="<<geta(line)<<endl;
+    Line line(6);
+    cout<<"geta="<<geta(line)<<endl;
 
-    Rectan rec;
-
+    // Rectan rec;
+    // rec.ccout();
 }

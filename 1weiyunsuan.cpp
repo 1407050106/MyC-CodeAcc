@@ -24,5 +24,4 @@ int main()
     // Print32(~a);
     // cout<<endl;
     // cout<<~a+1<<endl;     
-
 }

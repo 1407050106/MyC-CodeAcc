@@ -43,6 +43,7 @@ class Shuzu {
         Node* CreateDoubleLian(int num)
         {
             Node* head = new Node;
+            // 用一个指针指向head，然后以后利用它连接链表
             Node* pre = head;
             for (int i=0; i<num; i++)
             {
@@ -101,7 +102,7 @@ int main() {
     //scanf("%d", &a);
     //cout<<a<<endl;
 
-    //for mobanlei
+    // // for mobanlei
     // Array<string> array2;
     // while (1)
     // {
