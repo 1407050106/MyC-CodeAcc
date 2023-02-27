@@ -82,6 +82,7 @@ void RPrintChain(Node* head)
 //fanzhuan lianbiao
 Node* ChainReverse(Node* head)
 {
+    // 需要2个指针帮助, 这俩指针先设成空
     Node* pre = nullptr;
     Node* next = nullptr;
     while (head!=nullptr)
@@ -91,11 +92,12 @@ Node* ChainReverse(Node* head)
         pre=head;
         head = next;
     }
-    return pre;
+    return pre;  // 注意返回哪个哈
 }
 
 Node* DoubleChainReverse(Node* head)
 {
+    // 需要2个指针帮助, 这俩指针先设成空
     Node* next = nullptr;
     Node* pre = nullptr;
     
@@ -110,14 +112,17 @@ Node* DoubleChainReverse(Node* head)
     return pre;
 }
 
+// 从链表中删除一个target节点，注意target可能有很多，也可能在头部
 Node* Deleteone(Node* head, int target)    //2ge while
 {
+    // 第一个while是为了防止头部连续的target
     while(head!=nullptr)
     {
         if (head->val!=target)
             break;
         head=head->next;
     }
+    // 这里head代表的是当前来到的节点
     Node* pre = head;     //shuang zhizhen sixiang, touzhizhen is this, bu huibian
     Node* cur = head;
     while(cur!=nullptr)
