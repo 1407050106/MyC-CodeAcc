@@ -115,7 +115,7 @@ Node* DoubleChainReverse(Node* head)
 // 从链表中删除一个target节点，注意target可能有很多，也可能在头部
 Node* Deleteone(Node* head, int target)    //2ge while
 {
-    // 第一个while是为了防止头部连续的target
+    // 1.第一个while是为了防止头部连续的target
     while(head!=nullptr)
     {
         if (head->val!=target)
@@ -123,8 +123,9 @@ Node* Deleteone(Node* head, int target)    //2ge while
         head=head->next;
     }
     // 这里head代表的是当前来到的节点
-    Node* pre = head;     //shuang zhizhen sixiang, touzhizhen is this, bu huibian
+    Node* pre = head;     //shuang zhizhen sixiang
     Node* cur = head;
+    // 2.yong cur qubianli xunzhao
     while(cur!=nullptr)
     {
         if (cur->val==target)
