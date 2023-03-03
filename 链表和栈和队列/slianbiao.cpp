@@ -101,6 +101,7 @@ class WQueue{
 };
 
 //可以继续用双端对列的模板类方法，去实现栈和队列, 可参考class03-code03
+//队列可以继续沿用上述方法，只需要从前面删，从后面加；但是栈的话就更简单了，只要管理好一个尾部指针即可
 
 int main(){
     // QueueNode<int> qq=QueueNode<int> (10);
