@@ -55,6 +55,7 @@ void merge(int arr[], int L, int mid, int R)
     }
 }
 
+// how to use merge? 
 void MergeSort2(int arr[], int len)
 {
     if (len<2) return;

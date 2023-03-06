@@ -10,8 +10,13 @@
 #include <ctime>
 using namespace std;
 
+class mystack{
+    public:
 
+    private:
+        
+}; 
 
 int main() {
     
-}
+}  

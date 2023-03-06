@@ -20,6 +20,7 @@ int process(int arr[], int L, int R)
     return process(arr,L,M) + process(arr,M+1,R) + merge(arr,L,M,R);
 }
 
+// everytime merge produce minsum
 int merge(int arr[], int L, int M, int R)
 {
     int help[R-L+1]={0};
@@ -28,6 +29,7 @@ int merge(int arr[], int L, int M, int R)
     int res=0;
     while (p1<=M&&p2<=R)
     {
+        // when right has x number > arr[p1], then should add x * arr[p1]
         res+=arr[p1]<arr[p2]?arr[p1]*(R-p2+1):0;
         help[i++]=arr[p1]<arr[p2]?arr[p1++]:arr[p2++];
     }
