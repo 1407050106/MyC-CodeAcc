@@ -5,7 +5,7 @@ using namespace std;
 // this class is a big-root heap
 class Heaps{
     public:
-        Heaps(int nums):limit(nums)
+        Heaps(int nums):limit(nums)  // Pay attention!
         {
             arr = new int[limit];
             heapsize=0;
@@ -49,8 +49,7 @@ class Heaps{
             }
         }
 
-        // 这代表删数调整堆结构的过程2
-        // 从堆中删除最大值，即头节点
+        // 这代表删数后调整堆结构的过程2
         // 从index位置，往下看，不断地下沉
 		// 停：较大的孩子都不再比index位置的数大；或者已经没孩子了
         void Heapify(int arr[], int index, int heapSize)
@@ -74,12 +73,16 @@ class Heaps{
 
         void swap(int arr[], int p, int q)
         {
-            arr[p]=arr[p]^arr[q];
-            arr[q]=arr[p]^arr[q];
-            arr[p]=arr[p]^arr[q];
+            // arr[p]=arr[p]^arr[q];
+            // arr[q]=arr[p]^arr[q];
+            // arr[p]=arr[p]^arr[q];
+            int temp = arr[p];
+            arr[p]=arr[q];
+            arr[q]=temp;
         }       
 };
 
+// 模板泛型比较器
 template <typename T>
 class cmp
 {
@@ -119,7 +122,9 @@ int main() {
     heaps.push(1);
     heaps.push(2);
     heaps.push(3);
-    heaps.push(4);
+    // heaps.push(4);
+    // heaps.push(5);
+    // heaps.push(6);
     heaps.printheap();
     printf("\n");
     heaps.pop();

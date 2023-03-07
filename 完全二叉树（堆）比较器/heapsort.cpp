@@ -16,6 +16,7 @@ void HeapSort(int arr[], int nums)
     //     heapInsert(arr, k);
     // }
     // O(N)
+    // 从后向前，利用heapify可以建立一个大根堆
     for (int i = nums - 1; i >= 0; i--) 
     {
 		heapify(arr, i, nums);
@@ -25,10 +26,12 @@ void HeapSort(int arr[], int nums)
         cout<<arr[j]<<" ";
     }
     printf("\n");
+    // 把最大值放在最后，heapsize-1，剩下的继续调整成大根堆
     swap(arr, 0, --nums);
     while (nums>0)
     {
         cout<<"nums="<<nums<<endl;
+        // 剩下的继续调整成大根堆
         heapify(arr, 0, nums);
         for (int j=0; j<8; j++)
         {
@@ -36,7 +39,8 @@ void HeapSort(int arr[], int nums)
         }
         printf("\n");   
         swap(arr, 0, --nums);
-    }    
+    } 
+    // 最后，就会生成升序数组   
 }
 
 void heapInsert(int arr[], int index)
