@@ -37,18 +37,12 @@ int partition(int arr[], int L, int R)
     {
         if (arr[index]<=arr[R])
         {
-            less++;
-            //swap(arr, index, less);
-            int temp = 0;
-            temp=arr[less];
-            arr[less]=arr[index];
-            arr[index]=temp;
-            index++;
-        }
+            swap(arr, ++less, index);
+        } 
         index++;
     }
-    swap(arr, index, R);    // pay attention!
-    return index;
+    swap(arr, ++less, R);    // pay attention!
+    return less;
 }
 
 // NetherlanFlag 2.0
@@ -124,7 +118,7 @@ void process2(int arr[], int L, int R)
 {
     if (L>=R) return;
     pair<int, int> wer = netherlandsFlag(arr, L, R);
-    cout<<wer.first<<wer.second<<endl;
+    // cout<<wer.first<<wer.second<<endl;
     process2(arr, L, wer.first-1);
     process2(arr, wer.second+1, R);
 }
@@ -157,6 +151,7 @@ int main() {
     // pair <int, int> res;
     // res=netherlandsFlag(arr, 1, 3);
     // cout<<res.first<<res.second<<endl;
+    srand(time(0));
     int test[10]={0};
     for (int i=0; i<10; i++)
     {
@@ -169,8 +164,8 @@ int main() {
     printf("\n");
 
     int nums = sizeof(test)/sizeof(test[0]);
-    quicksort2(test);
-    for (int i=0; i<10; i++)
+    quicksort3(test);
+    for (int i=0; i<nums; i++)
     {
         cout<<test[i]<<" ";
     }
