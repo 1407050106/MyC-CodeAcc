@@ -54,6 +54,7 @@ class minheap{
                 lines.push_back(line);
             }
             sort(lines.begin(), lines.end(), comparestart);
+            // 准备一个小根堆用于存放每条线段的右边界
             priority_queue<int, vector<int>, greater<int>> mq;
             int cover=0;
             for (int k=0; k<num; k++)
