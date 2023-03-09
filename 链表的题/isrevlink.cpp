@@ -38,6 +38,7 @@ class test{
 
             if(head==nullptr || head->next==nullptr) return true;
             Node *n1=head, *n2=head;
+            // 找中点或上中点
             while(n2->next!=nullptr && n2->next->next!=nullptr) // find mid node!
             {
                 n1=n1->next;  // n1 -> mid
@@ -46,6 +47,7 @@ class test{
             // get n1 中点
             Node *n3=n1->next, *n4=nullptr;
             n1->next=nullptr;
+            // 翻转链表
             while(n3!=nullptr)   //ni xu
             {
                 n4=n3->next;
@@ -58,6 +60,7 @@ class test{
             n2 = n1; // use n2 save last node
             n4 = head;
             bool res = true;
+            // 这个判断巧妙！直接省去思考奇偶问题！
             while (n4!=nullptr && n1!=nullptr)
             {
                 //cout<<n4->val<<" "<<n1->val<<endl;
@@ -71,6 +74,7 @@ class test{
                 n1=n1->next;  // right to mid
             }
             // do not forget recovery, so return finally
+            // 恢复可以自己写的更简洁，这段没问题了
             n3=n2->next;
             n2->next=nullptr;
             while (n3!=nullptr)  // help think 1<-2<-3<-4  n4<-n3->n1
@@ -104,15 +108,15 @@ int main() {
     Node* node1 = new Node(1);
     node1->next = new Node(2);
     node1->next->next = new Node(2);
-    node1->next->next->next = new Node(2);
-    node1->next->next->next->next = new Node(1);
+    node1->next->next->next = new Node(1);
+    //node1->next->next->next->next = new Node(1);
     cout<<tt.isrev1(node1)<<endl;
 
     Node* node2 = new Node(1);
-    node2->next = new Node(1);
-    node2->next->next = new Node(0);
+    node2->next = new Node(2);
+    node2->next->next = new Node(2);
     node2->next->next->next = new Node(1);
-    node2->next->next->next->next = new Node(2);
+    //node2->next->next->next->next = new Node(2);
     //tt.PrintLink(node2);
     cout<<tt.isrev2(node2)<<endl;
 }

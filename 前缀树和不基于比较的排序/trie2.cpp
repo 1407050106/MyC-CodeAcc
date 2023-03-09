@@ -63,7 +63,9 @@ class Trie{
                 for (char c:word)
                 {   
                     path = (int)c;
+                    // 注意这里的写法!!
                     auto it = node->nexts->find(path);
+                    // 要用pass值做判断!!
                     if (--(it->second->pass)==0)
                     {
                         node->nexts->erase(it);
@@ -83,6 +85,7 @@ class Trie{
             for (char c:word)
             {
                 path = (int)c;
+                // 属于当前字符的路存在，才会有它的结尾节点记录
                 if(node->nexts->count(path)==0)
                 {
                     return 0;
