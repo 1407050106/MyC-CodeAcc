@@ -32,7 +32,7 @@ class BTree{
                     Node = temp.top();
                     temp.pop();
                     cout<<Node->val<<" ";
-                    if(Node->right)       // 先右后左
+                    if(Node->right)       // 闁稿繐鐗嗚ぐ鎼佸触鎼粹€茬
                     {
                         temp.push(Node->right);
                     }
@@ -45,7 +45,7 @@ class BTree{
             }
         }
 
-        void posprint(TreeNode* Node)   // 要左右头
+        void posprint(TreeNode* Node)   // 閻熸洑绀佹稊蹇涘矗閸愬眰浠�
         {
             if (Node)
             {
@@ -56,7 +56,7 @@ class BTree{
                     Node = n1.top();
                     n1.pop();
                     n2.push(Node);
-                    if(Node->left)       // 先左后右
+                    if(Node->left)       // 闁稿繐鐗嗘稊蹇涘触鎼粹€崇
                     {
                         n1.push(Node->left);
                     }
@@ -81,14 +81,14 @@ class BTree{
             if (cur)
             {
                 stack<TreeNode*> temp;
-                while(!temp.empty() || cur!=nullptr)  // 两个条件互相制约，只要栈不为空或者还有节点，就继续压栈
+                while(!temp.empty() || cur!=nullptr)  // 濞戞挶鍊撻柌婊堝级閳ュ弶锟姐垺绂嶉幒鏃€绁查柛鎺戝鐎规娊鏁嶇仦钘夋锭閻熸洑鐒﹂悥銈嗙▔瀹ュ嫯绀嬬紒宀€鍎ら崹銊╂嚀閸涙壆绠烽柡鍫濓拷搴∥濋柣鎰缁辨繄浜告潏鈺傚煕缂傦拷?闁告ê锟斤拷閻栵拷
                 {
                     if (cur!=nullptr)
                     {
                         temp.push(cur);
                         cur=cur->left;
                     } else {
-                        TreeNode* node = temp.top();    // 这里要注意：下一步要获取的是栈顶节点的右孩子
+                        TreeNode* node = temp.top();    // 閺夆晜鐟╅崳椋庢啺娴ｈ鏆堥柟鏉块獜缁辩増绋夌€ｂ晝锟芥潙锟芥縿鍎�?娴ｈ棄绠柛娆愮墱濞堟垿寮�?闁哄秴鐗撻妴濠囨嚍閸屾粌浠柣銊ュ瑜板摜鈧稈鏅涢悺锟�
                         cout<<node->val<<" ";
                         temp.pop();
                         cur=node->right;

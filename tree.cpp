@@ -74,10 +74,7 @@ int Depth(BiTree T){
     else{
         int m = Depth(T->lchild)+1;
         int n = Depth(T->rchild)+1;
-        if(m>n)
-            return (m);
-        else
-            return (n);
+        return m>n?m:n;
     }
 }
  

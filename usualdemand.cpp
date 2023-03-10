@@ -19,7 +19,7 @@ struct abc
     //char b;
     double c;
 };
-
+// 这里的二叉树，只看一下它的另一种创建方法即可，其他方法去参考tree.cpp
 typedef struct TreeNode{
     int val;
     struct TreeNode* left;

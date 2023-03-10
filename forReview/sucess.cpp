@@ -20,104 +20,59 @@ struct abc{  // 48
 
 struct Node{
     int val;
-    Node* next;
-    Node(int input):val(input){ next=nullptr; }
+    Node* right;
+    Node* left;
+    Node(int value):val(value) {}
 };
-
-void PrintLink(Node* head);
-bool isrvlink(Node* head);
-
-bool isrvlink(Node* head)
-{   
-    if (head==nullptr || head->next==nullptr) return true;
-    Node *slow=head, *fast=head;
-    while (fast->next!=nullptr && fast->next->next!=nullptr)
-    {
-        slow=slow->next;
-        fast=fast->next->next;
-    }
-    Node *cur = slow->next, *next=nullptr;
-    slow->next=nullptr;
-    while(cur!=nullptr)
-    {
-        next=cur->next;
-        cur->next=slow;
-        slow=cur;
-        cur=next;
-    }
-    // slow is end
-    bool res=true;
-    cur=slow; // record end
-    fast=head;
-    while (fast!=nullptr&&slow!=nullptr)
-    {
-        if (fast->val!=slow->val) 
-        {
-            res = false;
-            break;
-        }
-        fast=fast->next;
-        slow=slow->next;
-    }
-    fast=nullptr;
-    while (cur!=nullptr)
-    {
-        next=cur->next;
-        cur->next=fast;
-        fast=cur;
-        cur=next;
-    }
-    return res;
-}
-
-void PrintLink(Node* head)
-{
-    if (head==nullptr) return;
-    Node* node=head;
-    while (node!=nullptr)
-    {
-        cout<<node->val<<" ";
-        node=node->next;
-    }
-    printf("\n");
-}
 
 class mytrie{
     public:
-        mytrie()
-        {
-            cout<<"mytrie create!"<<endl;
-        }
-        virtual ~mytrie()
-        {
-            cout<<"mytrie over!"<<endl;
-        }
-    private:
-}; 
+       void createtree(Node* &root)
+       {
+            int a;
+            cin>>a;
+            if (a==0) return;
+            root = new Node(a);
+            createtree(root->left);
+            createtree(root->right);
+       }
 
-class like: public mytrie{
-    public:
-        like()
-        {
-            cout<<"like create!"<<endl;
-        }
-        ~like()
-        {
-            cout<<"like over!"<<endl;
-        }
-};
+       void inprint(Node* node)
+       {
+            if(!node) return;
+            else {
+                inprint(node->left);
+                cout<<node->val<<" ";
+                inprint(node->right);
+            }
+       }
+
+       int printdepth(Node* node)
+       {
+            if (!node) return 0;
+            else {
+                int m = printdepth(node->left)+1;
+                int n = printdepth(node->right)+1;
+                return m>n?m:n;
+            }
+       }
+
+
+       void rpreorder(Node* root)
+       {
+            
+       }
+    private:
+
+}; 
 
 int main() {
     //cout<<sizeof(abc)<<endl;
 
-    // Node* node1 = new Node(1);
-    // node1->next = new Node(2);
-    // node1->next->next = new Node(3);
-    // node1->next->next->next = new Node(2);
-    // node1->next->next->next->next = new Node(1);
-    // PrintLink(node1);
-    // cout<<isrvlink(node1)<<endl;
-    // PrintLink(node1);
-
-    like lt;
+    mytrie mt;
+    Node* root;
+    mt.createtree(root);
+    mt.inprint(root);
+    printf("\n");
+    cout<<mt.printdepth(root);
 }  
