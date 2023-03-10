@@ -24,13 +24,6 @@ struct Node{
     Node(int input):val(input){ next=nullptr; }
 };
 
-class mytrie{
-    public:
-        
-    private:
-       
-}; 
-
 void PrintLink(Node* head);
 bool isrvlink(Node* head);
 
@@ -89,14 +82,42 @@ void PrintLink(Node* head)
     printf("\n");
 }
 
+class mytrie{
+    public:
+        mytrie()
+        {
+            cout<<"mytrie create!"<<endl;
+        }
+        virtual ~mytrie()
+        {
+            cout<<"mytrie over!"<<endl;
+        }
+    private:
+}; 
+
+class like: public mytrie{
+    public:
+        like()
+        {
+            cout<<"like create!"<<endl;
+        }
+        ~like()
+        {
+            cout<<"like over!"<<endl;
+        }
+};
+
 int main() {
     //cout<<sizeof(abc)<<endl;
-    Node* node1 = new Node(1);
-    node1->next = new Node(2);
-    node1->next->next = new Node(3);
-    node1->next->next->next = new Node(2);
-    node1->next->next->next->next = new Node(1);
-    PrintLink(node1);
-    cout<<isrvlink(node1)<<endl;
-    PrintLink(node1);
+
+    // Node* node1 = new Node(1);
+    // node1->next = new Node(2);
+    // node1->next->next = new Node(3);
+    // node1->next->next->next = new Node(2);
+    // node1->next->next->next->next = new Node(1);
+    // PrintLink(node1);
+    // cout<<isrvlink(node1)<<endl;
+    // PrintLink(node1);
+
+    like lt;
 }  
