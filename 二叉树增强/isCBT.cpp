@@ -34,7 +34,7 @@ class ConstructTree{
             PrintTree(root->right);
         }
 
-        // 借助二叉树的层序遍历
+        // 借助二叉树的层序遍历(这是左神的BFS方法，用自己的BFS也可以!)
         bool isCBT(TreeNode* head)
         {
             if (head==nullptr) return true;

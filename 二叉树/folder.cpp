@@ -18,10 +18,11 @@ void process(int i, int N, bool down)
 {
     // 递归的终止条件？
     if (i>N) return;
-    process(i+1, N, true);
+    process(i+1, N, true);  // 去递归下一层的左孩子
     string s = down?"a":"t";
     cout<<s<<" ";
-    process(i+1, N, false);
+    process(i+1, N, false);  // 去递归下一层的右孩子
+    // 所以这题考察对二叉树的递归序的深刻理解,超级变式中序遍历!
 }
 
 int main() {

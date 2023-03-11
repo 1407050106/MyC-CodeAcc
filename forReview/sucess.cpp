@@ -58,10 +58,7 @@ class mytrie{
        }
 
 
-       void rpreorder(Node* root)
-       {
-            
-       }
+
     private:
 
 }; 
@@ -75,4 +72,6 @@ int main() {
     mt.inprint(root);
     printf("\n");
     cout<<mt.printdepth(root);
+    printf("\n");
+
 }  
