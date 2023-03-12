@@ -47,7 +47,7 @@ class ConstructTree{
                 sequence.pop();
                 TreeNode* l = node->left;
                 TreeNode* r = node->right;
-                // // 如果遇到了第一个不双全的节点，又发现当前节点不是叶节点 或者 有右无左.  只要遇到一次即可直接返回false!
+                // 如果遇到了第一个不双全的节点，剩下的节点有不是叶节点的 或者 有右无左.  只要遇到一次即可直接返回false!
                 if ((firstnotdoublesign && (l!=nullptr || r!=nullptr)) || (l==nullptr && r!=nullptr)) return false;
                 if(l!=nullptr) sequence.push(l);
                 if(r!=nullptr) sequence.push(r);

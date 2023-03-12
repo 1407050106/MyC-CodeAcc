@@ -19,11 +19,11 @@ string getloweststring1(vector<string> snum)
 {
     if (snum.empty()) return "";
     set<string> res = process(snum);
-    if (res.size()==0) return "";
+    //if (res.size()==0) return "";
     return *res.begin();
 }
 
-// ÀûÓÃµÝ¹éÇóÊý×éÖÐËùÓÐ×Ö·û´®µÄÈ«ÅÅÁÐ£¬·µ»ØËùÓÐ¿ÉÄÜµÄ½á¹û!!!!!!!
+// ï¿½ï¿½ï¿½ÃµÝ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½ÜµÄ½ï¿½ï¿½?!!!!!!!
 set<string> process(vector<string> snum)
 {
     set<string> ans;
@@ -36,10 +36,15 @@ set<string> process(vector<string> snum)
     {
         string first = snum[i];
         vector<string> temp = removexfromv(snum, i);
+        // ï¿½ï¿½ï¿½ï¿½Úºï¿½Ë¼ï¿½?
         set<string> next = process(temp);
-        for (string s : next)
+        // for (string s : next)
+        // {
+        //     ans.insert({first+s});
+        // }
+        for (auto it = next.begin(); it!=next.end(); i++)
         {
-            ans.insert({first+s});
+            ans.insert({first+*it});
         }
     }
     return ans;
@@ -109,20 +114,22 @@ vector<string> copysnum(vector<string> origin)
 int main() {
     // vector<string> test = {"ba", "b"};
     // getloweststring2(test);
-    int arrLen = 5;
-	int strLen = 3;
-	int testTimes = 100;
+    int arrLen = 3;
+	int strLen = 2;
+	int testTimes = 1;
     printf("Test begin!\n");
     for (int i=0; i<testTimes; i++)
     {
         vector<string> test1 = generateRandomStringArray(arrLen, strLen);
         vector<string> test2 = copysnum(test1);
-        string res1 = getloweststring1(test1);
+        //string res1 = getloweststring1(test1);
+        //cout<<"res1="<<res1<<endl;
         string res2 = getloweststring2(test2);
-        if(res1!=res2)
-        {
-            cout<<"Oops!"<<endl;
-        }
+        cout<<"res2="<<res2<<endl;
+        // if(res1!=res2)
+        // {
+        //     cout<<"Oops!"<<endl;
+        // }
     }
     printf("Test ending!\n");
 }

@@ -1,9 +1,11 @@
 #include <iostream>
 #include <unordered_map>
 #include <unordered_set>
+#include <queue>
 #include <vector>
 using namespace std;
 
+// ��ȫ�����Լ�д�ķ�������!
 struct Edge{
     int weight;
     Node* from;
@@ -32,7 +34,7 @@ class GraphGenerator {
         graph* createGraph(vector<vector<int>> matrix)
         {
             graph* grap = new graph(); 
-            // 拿到每一条边，matrix[i]的信息 
+            // 拿到每一条边，matrix[i]的信�?? 
             for (int i=0; i<matrix.size(); i++)
             {
                 int weight = matrix[i][0];
@@ -61,6 +63,43 @@ class GraphGenerator {
                 grap->edges.insert({newedge});
             }
             return grap;
+        }
+};
+
+class readgraph{
+    public:
+        // 注意防止循环图结构
+        void graphBFS(graph* graph)
+        {
+            if (!graph) return;
+            queue<Node*> curlevel;
+            unordered_set<Node*> set;
+            curlevel.push(graph->nodes.begin()->second);
+            set.insert({graph->nodes.begin()->second});
+            while(!curlevel.empty())
+            {
+                for (int i=0; i<curlevel.size(); i++)
+                {
+                    Node* cur = curlevel.front();
+                    curlevel.pop();
+                    cout<<cur->value<<endl;
+                    for (int j=0; j<cur->nexts.size(); j++)
+                    {
+                        // !!!!!!!!!! No circle~
+                        if (set.count(cur->nexts[j])==0)
+                        {
+                            curlevel.push(cur->nexts[j]);
+                            set.insert({cur->nexts[j]});
+                        }
+                    }
+                }
+            }
+        }
+
+        void grapfDFS(graph* graph)
+        {
+            // for yourself later
+            // 看了左神的非递归写法你就会有递归的思路
         }
 };
 

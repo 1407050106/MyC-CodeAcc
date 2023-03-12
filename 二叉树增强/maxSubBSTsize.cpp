@@ -96,12 +96,14 @@ class ConstructTree{
             }
             int p3 = -1;
             // 里有代码coding的精心组织
+            // 1.先判断子树是否是BST？
             bool leftisBST = leftinfo==nullptr?true:(leftinfo->allSize==leftinfo->maxSubSize);
             bool rightisBST = rightinfo==nullptr?true:(rightinfo->allSize==rightinfo->maxSubSize);
             if (leftisBST && rightisBST)
             {
                 // 这里注意：判断还是要避免之前的任何干扰，从头开始严格判断，将最全面的可能性展示出来
                 // 比如这里，如果左树不为空才能继续获取Info中的max值进行判断
+                // 2.继续判断以head为根节点的树是否是BST？
                 bool leftislegal = leftinfo==nullptr?true:(leftinfo->max<head->val);
                 bool rightislegal = rightinfo==nullptr?true:(rightinfo->min>head->val);
                 if (leftislegal && rightislegal)

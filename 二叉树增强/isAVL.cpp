@@ -3,6 +3,7 @@
 #include <cmath>
 using namespace std;
 
+//  已经掌握啦！
 // 保存分别在左右子树上需要获取的信息
 struct Info{
     bool isbalanced;  // 是否是平的

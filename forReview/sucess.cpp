@@ -57,7 +57,7 @@ class mytrie{
             }
        }
 
-
+       
 
     private:
 
@@ -66,12 +66,12 @@ class mytrie{
 int main() {
     //cout<<sizeof(abc)<<endl;
 
-    mytrie mt;
-    Node* root;
-    mt.createtree(root);
-    mt.inprint(root);
-    printf("\n");
-    cout<<mt.printdepth(root);
-    printf("\n");
+    // mytrie mt;
+    // Node* root;
+    // mt.createtree(root);
+    // mt.inprint(root);
+    // printf("\n");
+    // cout<<mt.printdepth(root);
+    // printf("\n");
 
 }  

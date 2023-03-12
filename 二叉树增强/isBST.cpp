@@ -59,7 +59,7 @@ class ConstructTree{
             if (head==nullptr) return nullptr;
             Info* left = process(head->left);
             Info* right = process(head->right);
-
+            // 先找出以当前节点为头节点的树的最小值和最大值, 把tmax，tmin填好
             int tmin = head->val;
             if (left!=nullptr) 
             {

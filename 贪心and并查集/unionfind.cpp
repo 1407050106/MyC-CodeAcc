@@ -111,4 +111,5 @@ int main() {
     cout<<a.issame(a2[0], a2[3])<<endl;
 
     cout<<a.issame(a2[1], a2[3])<<endl;
+
 }

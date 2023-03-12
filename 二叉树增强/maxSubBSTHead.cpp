@@ -84,6 +84,7 @@ class ConstructTree{
             int p2=-1;
             if(rightinfo!=nullptr) p2=rightinfo->maxsubsize;
             int p3=-1;
+            // 这里�?(leftinfo->root==head->left)也能代替判断子树�?否是BST�?
             bool leftisBST = leftinfo==nullptr?true:(leftinfo->root==head->left);
             bool rightisBST = rightinfo==nullptr?true:(rightinfo->root==head->right);
             if(leftisBST && rightisBST)
@@ -97,6 +98,7 @@ class ConstructTree{
                     p3 = leftsize+rightsize+1;
                 } 
             }
+            // 最后根�?结果分类选择�?
             maxsubsize=max(max(p1,p2), p3);
             if (maxsubsize==p1)
             {
