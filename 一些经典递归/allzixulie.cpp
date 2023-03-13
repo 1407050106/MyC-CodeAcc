@@ -31,6 +31,7 @@ void process(vector<char> s, int index, vector<string>& ans, string path)
         ans.push_back(path);
         return;
     }
+    // 分类666
     // 没有要index位置的字符
     process(s, index+1, ans, path);
     // 要了index位置的字符
@@ -48,7 +49,7 @@ void printvec(vector<string> ins)
 }
 
 int main() {
-    string test = "123";
+    string test = "abc";
     vector<string> res=findallsubseq(test);
     printvec(res);
 }

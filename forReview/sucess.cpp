@@ -57,8 +57,6 @@ class mytrie{
             }
        }
 
-       
-
     private:
 
 }; 
@@ -73,5 +71,4 @@ int main() {
     // printf("\n");
     // cout<<mt.printdepth(root);
     // printf("\n");
-
 }  

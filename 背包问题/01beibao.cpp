@@ -41,7 +41,7 @@ vector<vector<int>> findmaxmoney(int num, int vol)
     //     printf("\n");
     // }
 
-    cout<<"The best value for  composition of "<<num-1<<"things is"<<dp[num-1][vol-1]<<endl;
+    cout<<"The best value for composition of "<<num-1<<"things is"<<dp[num-1][vol-1]<<endl;
 
     return dp;
 

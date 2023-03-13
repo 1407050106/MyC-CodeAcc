@@ -4,7 +4,7 @@ using namespace std;
 
 class robot{
     public:
-        // 一共有N个数的范围，初始位置start，目的地aim，只能走N步
+        // 一共有N个数的范围，初始位置start，目的地aim，只能走K步
         int ways1(int N, int start, int aim, int K)
         {
             return process1(start, K, aim, N);
@@ -76,11 +76,11 @@ class robot{
             } else {
                 ans = process2(cur-1, rest-1, aim, N, dp) + process2(cur+1, rest-1, aim, N, dp);
             }
-            
+            return ans;
         }
 
         /************************/
-        // 进一步优化!
+        // 进一步优化!比递归改写动归的解法还更好理解一点！
         // public static int ways3(int N, int start, int aim, int K) {
         //     if (N < 2 || start < 1 || start > N || aim < 1 || aim > N || K < 1) {
         //         return -1;
