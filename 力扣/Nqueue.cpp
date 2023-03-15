@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+// 既包含计数也包含记录全部结果，两种方法都有!
 class Solution {
 public:
     vector<vector<string>> res;
@@ -106,5 +106,5 @@ int main() {
         printf("\n");
     }
 
-    //cout<<sc.getnums(3)<<endl;   // no problem
+    cout<<sc.getnums(5)<<endl;   // no problem
 }
