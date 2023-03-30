@@ -10,12 +10,15 @@
 #include <ctime>
 using namespace std;
 
-struct abc{  // 48 
-    int a;
-    char c;
-    char d;
-    long b;
-    string s;
+class abc{  // 48 
+    // int a;
+    // char c;
+    // char d;
+    // long b;
+    // string s;
+    bool isok () {return true;}
+    static int m;
+    virtual int getit() {return 1;}
 };
 
 struct Node{
@@ -62,7 +65,7 @@ class mytrie{
 }; 
 
 int main() {
-    //cout<<sizeof(abc)<<endl;
+    cout<<sizeof(abc)<<endl;
 
     // mytrie mt;
     // Node* root;
