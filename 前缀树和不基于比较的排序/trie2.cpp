@@ -62,6 +62,7 @@ class Trie{
                 int path = 0;
                 for (char c:word)
                 {   
+                    // 就是先找路！！！
                     path = (int)c;
                     // 注意这里的写法!!
                     auto it = node->nexts->find(path);
