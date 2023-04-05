@@ -45,6 +45,7 @@ int main() {
     // ifstream t("./test.json");
     // t>>data;
     // cout<<data<<endl;
+
     thread th1(WriteSome);
     {
         unique_lock<mutex> lck(lk);     //cv.wait bixu dengdai unique_lock()
