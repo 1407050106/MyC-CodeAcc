@@ -95,6 +95,7 @@ class unionsets{
             return a.value<b.value;
         }
     private:
+        // 主要可以依靠两个数据结构！
         // 用一张表起到指针的作用，就告诉你，谁的父亲是谁
         unordered_map<T, T> nodes;
         // 存储代表节点的大小,即代表节点所代表的集合大小

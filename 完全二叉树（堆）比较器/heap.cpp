@@ -36,13 +36,15 @@ class Heaps{
         int *arr;
         int heapsize;
 
+        // 功能函数只负责完成功能，其余什么范围呀交给外面的接口函数！！！heapsize和limit的大小是同步的！！！
+
         // 这代表加数调整堆结构的过程1
         // 往堆中加数并调整堆结构
         // 新加进来的数，现在停在了index位置，请依次往上移动，
 		// 移动到0位置，或者干不掉自己的父亲了，停！
         void HeapInsert(int arr[], int index)
         {
-            while (arr[index]>arr[(index-1)/2]) 
+            while (arr[index]>arr[(index-1)/2])  // 注意这里的除法！
             {
                 swap(arr, index, (index-1)/2);
                 index=(index-1)>>1;

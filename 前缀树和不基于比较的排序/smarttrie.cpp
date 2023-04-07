@@ -124,6 +124,7 @@ int main() {
     pt.delet("abc");
     cout<<pt.search("abc")<<endl;
 
+    // valgrind --tool=memcheck --leak-check=full ./plusfunc.out
     // int* a = new int;
     // *a=6;
 

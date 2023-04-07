@@ -33,6 +33,7 @@ class GraphGenerator {
     public:
         graph* createGraph(vector<vector<int>> matrix)
         {
+            // 创建一个东西首先就是要有一块地址～
             graph* grap = new graph(); 
             // 拿到每一条边，matrix[i]的信�?? 
             for (int i=0; i<matrix.size(); i++)
