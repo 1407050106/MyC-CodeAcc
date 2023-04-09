@@ -60,6 +60,7 @@ class threadpool
 				throw runtime_error("ThreadPool is stopped!");
  
 			using RetType = decltype(f(args...)); 
+			// packaged_task 可以看作是一种任务的封装类，它同样适用于多线程编程和并发计算
 			auto task = make_shared<packaged_task<RetType()>>(
 				bind(forward<F>(f), forward<Args>(args)...)
 				); 
@@ -67,9 +68,7 @@ class threadpool
 			{   //add func to the queue of tasks 
 				lock_guard<mutex> lock{ _lock };
 				//push task to the end of queue
-				_tasks.emplace([task]() {  
-					(*task)();
-					});
+				_tasks.emplace([task]() { (*task)(); });
 			}
 // #ifdef THREADPOOL_AUTO_GROW
 // 			if (_idlThrNum < 1 && _pool.size() < THREADPOOL_MAX_NUM)
