@@ -21,7 +21,7 @@ struct Node{
     vector<shared_ptr<Node<T>>> nexts;
     vector<shared_ptr<edge<T>>> toedges;
 
-    Node(T v):val(v),in(0),out(0) {}   // 注意构造函�?
+    Node(T v):val(v),in(0),out(0) {}   // 注意构造函�??
 };
 
 template<typename T>
@@ -29,7 +29,7 @@ struct edge{
     T val;
     shared_ptr<Node<T>> fromnode;
     shared_ptr<Node<T>> tonode;
-    // 注意构造函�?
+    // 注意构造函�??
     edge(T v, shared_ptr<Node<T>> from, shared_ptr<Node<T>> to):val(v),fromnode(from),tonode(to) {}
 };
 
@@ -75,7 +75,7 @@ class graphs{
 
         void bfsgraph(shared_ptr<graph<T>> gph) 
         {
-            auto it = gph->nodes[1];   // 这里设置的从1开始，也可以从别处开始，但是遍历结果会不一样哦
+            auto it = gph->nodes[1];   // 这里设置的从1开始，也可以从�?处开始，但是遍历结果会不一样哦
             shared_ptr<Node<T>> head = it;
             queue<shared_ptr<Node<T>>> q;
             unordered_set<shared_ptr<Node<T>>> record;
@@ -101,9 +101,9 @@ class graphs{
             }
         }
 
-        void dfsgraph(shared_ptr<graph<int>> gph)  // 这种dfs，相当于找出全部路径！
+        void dfsgraph(shared_ptr<graph<int>> gph)  // 这�?�dfs，相当于找出全部�?径！
         {
-            shared_ptr<Node<int>> head = gph->nodes[1];  // 也是指定从1位置为起点
+            shared_ptr<Node<int>> head = gph->nodes[1];  // 也是指定�?1位置为起�?
             vector<string> res;unordered_set<shared_ptr<Node<int>>> record;
             process(record, head, "", res);
             for (auto s : res) cout<<s<<" ";
@@ -114,28 +114,28 @@ class graphs{
         {
             path+=to_string(node->val);
             record.insert(node);
-            int limit = node->nexts.size(), count=0;  // 我太聪明了：DFS里必须限制，某个节点真的无论可走时才能return！！！
+            int limit = node->nexts.size(), count=0;  // 我太�?明了：DFS里必须限制，某个节点真的无�?�可走时才能return！！�?
             for (auto it : node->nexts)
             {
-                if (record.count(it)!=0)  // 第一种情况：无路可走时再return
+                if (record.count(it)!=0)  // �?一种情况：无路�?走时再return
                 {
                     if (++count==limit)
                     {
                         res.push_back(path);
                         return;
                     }   
-                } else if (it->nexts.empty())  // 第二种情况：下一层没有出路时，直接return
+                } else if (it->nexts.empty())  // �?二�?�情况：下一层没有出�?时，直接return
                 {
                     path+=to_string(it->val);
                     res.push_back(path);
                     return;
-                } else {    // 第三种情况：有路就继续往下走！
+                } else {    // �?三�?�情况：有路就继�?往下走�?
                     process(record, it, path, res);
                 }
             }
         }
 
-        void dfs2(shared_ptr<graph<int>> gph)  // easy!这种自己压栈的写法，可以找出全部节点，没有重复！
+        void dfs2(shared_ptr<graph<int>> gph)  // easy!这�?�自己压栈的写法，可以找出全部节点，没有重�?�！
         {
             shared_ptr<Node<int>> head = gph->nodes[1];
             stack<shared_ptr<Node<int>>> help;
@@ -163,6 +163,7 @@ class graphs{
 
 int main() {
     graphs<int> gps;
+    // ��ɫ�ʼǱ��ϵĸ��Ӳ���ͼ
     vector<vector<int>> test{{7,1,2},{6,1,3},{2,1,4},{1,4,3},{4,3,2},{8,2,5},{0,3,5},{9,5,4},{3,5,6},{1,6,8},{2,4,7},{1,7,6}};
     shared_ptr<graph<int>> newgraph = gps.graphgenerator(test);
 

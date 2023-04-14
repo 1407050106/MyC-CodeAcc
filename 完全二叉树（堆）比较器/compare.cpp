@@ -41,7 +41,7 @@ int main() {
     v.push_back(s5);
 
     Student stu;
-    sort(v.begin(), v.end(), stu.compare1);
+    sort(v.begin(), v.end(), compare1);
     for (Student ev : v)
     {
         cout<<"I am student "<<ev.name<<" age="<<ev.age<<" id="<<ev.id<<endl;
