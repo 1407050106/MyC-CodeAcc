@@ -1,0 +1,1 @@
+deb [signed-by=/usr/share/keyrings/cuda-C5C0804F-keyring.gpg] file:///var/cuda-repo-ubuntu2004-12-1-local /
