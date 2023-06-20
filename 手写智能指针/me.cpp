@@ -64,8 +64,7 @@ class mysmartptr{
                 return smartptr_count->get();
             } else {
                 return 0;
-            }
-            
+            }            
         }
 
 //¿½±´¹¹Ôìº¯Êý

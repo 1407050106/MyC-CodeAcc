@@ -82,8 +82,7 @@ class graphs{
                 return nullptr;
             }
         }
-
-        
+     
 };
 
 
