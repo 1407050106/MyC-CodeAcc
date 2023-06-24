@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.16)
+project( showImage )
+find_package( OpenCV REQUIRED )
+add_executable( showImage test2.cpp )
+target_link_libraries( showImage ${OpenCV_LIBS} )
