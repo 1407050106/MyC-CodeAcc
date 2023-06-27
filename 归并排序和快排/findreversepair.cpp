@@ -11,7 +11,7 @@ int getpair(int arr[], int len)
     {
         return 0;
     }
-    process(arr, 0, len-1);
+    return process(arr, 0, len-1);
 }
 
 int process(int arr[], int L, int R)
