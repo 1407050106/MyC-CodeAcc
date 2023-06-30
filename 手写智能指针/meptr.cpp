@@ -133,9 +133,9 @@ int main() {
     mysmartptr<int> testptr(new int);
     cout<<testptr.getcount()<<endl;
 
-        mysmartptr<int> test2 = testptr;
-        cout<<testptr.getcount()<<endl;
-        cout<<test2.getcount()<<endl;
+    mysmartptr<int> test2 = testptr;
+    cout<<testptr.getcount()<<endl;
+    cout<<test2.getcount()<<endl;
 
     mysmartptr<int> test3;
     cout<<test3.getcount()<<endl;

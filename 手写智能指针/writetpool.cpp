@@ -35,7 +35,7 @@ class pool{
         {
             _is_run=false;
             cv.notify_all();
-            // 这里不用判断是否在运行！
+            // 这里不用判断�?否在运�?�！
                 for (thread& thd : _pool)
                 {
                     if (thd.joinable()) thd.join();
@@ -70,13 +70,13 @@ class pool{
                             {
                                 unique_lock<mutex> lock(_lock);
 
-                                cv.wait(lock, [this]{return !_tasks.empty();}); //如果没在运行了或者任务队列不为空，都可以继续
+                                cv.wait(lock, [this]{return !_tasks.empty();}); //如果没在运�?�了或者任务队列不为空，都�?以继�?
                                 
-                                if (!_is_run || _tasks.empty()) // 注意这里的防止虚假唤醒
+                                if (!_is_run || _tasks.empty()) // 注意这里的防止虚假唤�?
                                 {
                                     return;
                                 }
-                                aimtask = move(_tasks.front());
+                                aimtask = move(_tasks.front()); // ע�������ƶ�����
                                 _tasks.pop();
                             }
                             _free_num--;
@@ -131,7 +131,7 @@ int main()
     mypool.commit(printcode,666);
     test st;
     future<int> ret = mypool.commit(st.fucked);
-    sleep(1); // 让主线程等一下
+    sleep(1); // 让主线程等一�?
     cout<<"线程池的数量为："<<mypool.get_size()<<endl;
     cout<<"线程池的空闲数量为："<<mypool.get_free()<<endl;
     sleep(1);
